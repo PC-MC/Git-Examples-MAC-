@@ -5,7 +5,7 @@ Double y1 = 0;
 Double y2 = 0;
 Double distance;
 
-Console.WriteLine("Введите координаты:");
+Console.WriteLine("Введите координаты");
 
 Console.Write("x1=");
 x1 = Convert.ToDouble(Console.ReadLine());
