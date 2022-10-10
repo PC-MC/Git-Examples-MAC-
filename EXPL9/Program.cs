@@ -1,6 +1,6 @@
 ﻿// Удалить вторую цифру трёхзначного числа
 Console.Write("Введите трехзначное целое целое число ");
-int n = int.Parse(Console.ReadLine());
+int n = int.Parse(Console.ReadLine()??"0");
 if(n > 99)
 {
     Console.Write((n / 100) % 10);//первая цифра трехзначного числа
