@@ -15,11 +15,10 @@ int sum2 = 0;
 for (int index = 0; index < array.Length; index++)
 {
     if (array[index] >= 0)
-    sum1 = sum1 + array[index];
+        sum1 = sum1 + array[index];
     else
-    sum2 = sum2 + array[index];
+        sum2 = sum2 + array[index];
 
 }
-
 Console.WriteLine($"Сумма всех положительных чисел равна: {sum1}");
 Console.WriteLine($"Сумма всех отрицательных чисел равна: {sum2}");
