@@ -1,23 +1,25 @@
 ﻿// Задать массив, заполнить случайными положительными трёхзначными числами. 
 // Показать количество нечетных\четных чисел
 Console.WriteLine("Введите количество элементов массива");
-int size = int.Parse(Console.ReadLine() ?? "0");
-int[] arrey = new int[size];
+int size = int.Parse(Console.ReadLine()??"0");
+int [] arrey = new int [size];
 
 for (int index = 0; index < size; index++)
-    arrey[index] = new Random().Next(100, 1000);
+    arrey[index] = new Random().Next(100,1000);
 
 Console.WriteLine("Ваш массив: ");
-
 for (int index = 0; index < size; index++)
     Console.Write($"{arrey[index]} ");
-
 int count1 = 0;
+//int count2 = 0;
 for (int index = 0; index < size; index++)
 {
-    if (arrey[index] % 2 == 0)
+    if(arrey[index] % 2 == 0)
         count1++;
+    //else
+        //count2++;(Решил удалить второй счетчик и просто вычесть первый из размера)
 }
 Console.WriteLine();
 Console.WriteLine($"Количество четных чисел в массиве равно: {count1}");
+Console.WriteLine();
 Console.WriteLine($"Количество нечетных чисел в массиве равно: {size - count1}");
