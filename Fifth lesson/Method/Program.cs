@@ -1,11 +1,29 @@
-﻿// Поиск максимума
+﻿// Заполнение массива
+void FillArrey(int[] arrey, int min, int max)
+{
+    for(int index = 0; index < arrey.Length; index++)
+    {
+        arrey[index] = new Random().Next(min,max);
+    }
+}
+
+// Печать массива
+void PrintArrey(int[] arrey)
+{
+    for(int index = 0; index < arrey.Length; index++)
+    {
+        Console.Write($"{arrey[index]}");
+    }
+}
+
+// Поиск максимума
 int Max(int[] arrey)
 {
     int max = arrey[0];
     for (int index = 0; index < arrey.Length; index++)
         if (arrey[index] > max)
             max = arrey[index];
-    Console.WriteLine($"Максимальное число в представленном массиве: {max}");
+    Console.Write($"Максимальное число в представленном массиве: {max}");
     return max;
 }
 
@@ -16,7 +34,7 @@ int Min(int[] arrey)
     for (int index = 0; index < arrey.Length; index++)
         if (arrey[index] < min)
             min = arrey[index];
-    Console.WriteLine($"Минимальное число в представленном массиве: {min}");
+    Console.Write($"Минимальное число в представленном массиве: {min}");
     return min;
 }
 
@@ -44,20 +62,20 @@ int Mul(int[] arrey)
 
 // Поиск индекса заданного элемента в массиве.
 // Если такого элемента в массиве нет то возвращать -1
-int Serch(int[] arrey)
+int SerchIndex(int[] arrey)
 {
-    Console.WriteLine("Введите число чей индекс требуется найти");
+    Console.Write("Введите число чей индекс требуется найти: ");
     int find = int.Parse(Console.ReadLine());
     int n = arrey.Length;
     int index = 0;
-    
+
     while (index < n)
     {
 
         if (arrey[index] == find)
         {
 
-            Console.WriteLine($"Число найдено, его индекс:{index}");
+            Console.WriteLine($"Число найдено, его индекс: {index}");
             break;
         }
         index++;
@@ -71,21 +89,93 @@ int Serch(int[] arrey)
     return index;
 }
 
+// Проверка наличия элемента в массиве. 
+// Возвращает true, если элемент в массиве есть, false – нет.
+int SerchNumber(int[] arrey)
+{
+    Console.Write("Введите число которое требуется найти: ");
+    int find = int.Parse(Console.ReadLine()??"0");
+    int n = arrey.Length;
+    int index = 0;
 
+    while (index < n)
+    {
 
+        if (arrey[index] == find)
+        {
 
-Console.WriteLine("Введите размер массива");
-int size = int.Parse(Console.ReadLine() ?? "0");
+            Console.WriteLine($"Число найдено:{arrey[index]}");
+            break;
+        }
+        index++;
+    }
+
+    if (index == n)
+    {
+        Console.WriteLine("Такого числа нет в массиве");
+    }
+
+    return arrey[index];
+}
+
+// Проверка наличия элемента в массиве. 
+// Возвращает true, если элемент в массиве есть, false – нет.
+bool FindNum(int []arrey)
+{
+    Console.Write("Введите число которое требуется найти: ");
+    int num = int.Parse(Console.ReadLine()??"0");
+for(int index = 0; index < arrey.Length; index++)
+{
+    if(arrey[index]==num)
+    {
+        return true;
+    }
+}
+return false;
+}
+
+// Поиск среднего арифметического
+double Average(int[]arrey)
+{
+    int sum = 0;
+    for(int index = 0; index < arrey.Length; index++)
+    {
+        sum = sum + arrey[index];
+    }
+    Console.WriteLine($"Среднее арифметическое равно: {sum/2}");
+    return sum/2;
+}
+
+Console.WriteLine("Начало работы с числами");
+Console.Write("Введите размер массива: ");
+int size = int.Parse(Console.ReadLine()??"0");
 int[] arrey = new int[size];
 
-for (int index = 0; index < arrey.Length; index++)
+FillArrey(arrey,1,10);
+// Вывод массива
+Console.Write("Ваш массив: ");
+PrintArrey(arrey);
+Console.WriteLine("");
+// Поиск максимальногочисла
+int max = Max(arrey);
+Console.WriteLine("");
+// Поиск минимального числа
+int min = Min(arrey);
+Console.WriteLine("");
+// Нахождение суммы чисел
+int sum = Sum(arrey);
+// Нахождение среднего арифметического
+Console.Write($"Среднее арифметическое равно {sum/2}");
 
-    arrey[index] = new Random().Next(1, 10);
-Console.WriteLine("Ваш массив:  ");
-for (int index = 0; index < arrey.Length; index++)
-    Console.Write($"{arrey[index]} ");
-Console.WriteLine();
+//Console.WriteLine("");
+//double average = Average(arrey);
 
-
-int x = Serch(arrey);
+// Нахождение произведения чисел
+int multi = Mul(arrey);
+// Проверка на наличие числа в массиве
+bool serch = FindNum(arrey);
+Console.WriteLine($"Наличие числа в массиве: {serch}");
+// Поиск индекса числа
+int index = SerchIndex(arrey);
+Console.WriteLine("Программа завершила работу.");
 
