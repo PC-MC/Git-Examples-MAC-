@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/anatoliyspitsyn/Desktop/Git Examples/Examples (Mac)/EXPL11/EXPL11.csproj": {}
+    "/Users/anatoliyspitsyn/Desktop/Git Examples/Examples (Mac)/First lesson/EXPL11/EXPL11.csproj": {}
   },
   "projects": {
-    "/Users/anatoliyspitsyn/Desktop/Git Examples/Examples (Mac)/EXPL11/EXPL11.csproj": {
+    "/Users/anatoliyspitsyn/Desktop/Git Examples/Examples (Mac)/First lesson/EXPL11/EXPL11.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/anatoliyspitsyn/Desktop/Git Examples/Examples (Mac)/EXPL11/EXPL11.csproj",
+        "projectUniqueName": "/Users/anatoliyspitsyn/Desktop/Git Examples/Examples (Mac)/First lesson/EXPL11/EXPL11.csproj",
         "projectName": "EXPL11",
-        "projectPath": "/Users/anatoliyspitsyn/Desktop/Git Examples/Examples (Mac)/EXPL11/EXPL11.csproj",
+        "projectPath": "/Users/anatoliyspitsyn/Desktop/Git Examples/Examples (Mac)/First lesson/EXPL11/EXPL11.csproj",
         "packagesPath": "/Users/anatoliyspitsyn/.nuget/packages/",
-        "outputPath": "/Users/anatoliyspitsyn/Desktop/Git Examples/Examples (Mac)/EXPL11/obj/",
+        "outputPath": "/Users/anatoliyspitsyn/Desktop/Git Examples/Examples (Mac)/First lesson/EXPL11/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/anatoliyspitsyn/.nuget/NuGet/NuGet.Config"
