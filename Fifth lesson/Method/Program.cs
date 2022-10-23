@@ -217,16 +217,13 @@ int CountOddNum(int[] array)
 
 // Проверка является ли массив отсортированным по возрастанию. 
 // Если массив отсортирован, то возвращать true, иначе - false.
-bool SortingCheck(int[] array)
+bool SortingCheck(int[]array)
 {
-    int index = 0;
-    while (index < array.Length)
-        {
-        if (array[index] <= array[index + 1])
-        return true;
-        index++;
-        }
-    return false;
+            for (int i = 0; i < array.Length-1; i++)
+                if (array[i] > array[i + 1])
+                    return false;
+            return true;
+
 }
 
 Console.WriteLine("Начало работы с числами");

@@ -1,2 +1,30 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿/* II. Реализовать следующие функции:
+1. Функцию, которая вычисляет число a в степени n
+2. Функцию, которая вычисляет факториал числа n
+3. Функцию, которая вычисляет сумму цифр произвольного целого числа n
+4. Функцию, которая проверяет является ли заданное число n полиндромом
+5. Функцию, складывающую два целых числа
+6. Функцию, определяющую является ли число простым, то есть возвращающую true, если число простое, иначе - false
+7. Функцию, определяющую является ли число чётным, то есть возвращающую true, если число чётное, иначе - false
+*/
+
+// Функция, которая вычисляет число a в степени n
+int NumXTimes(int a, int n)
+{
+
+int index = 0;
+int mult = 1;
+while (index<n)
+{
+    mult = mult * a;
+    index++;
+}
+return mult;
+
+}
+Console.WriteLine("Введите число: ");
+int a = int.Parse(Console.ReadLine());
+Console.WriteLine("Введите степень: ");
+int n = int.Parse(Console.ReadLine());
+int x = NumXTimes(a,n);
+Console.WriteLine($"Число: {a} в степени: {n} равно: {x}");
