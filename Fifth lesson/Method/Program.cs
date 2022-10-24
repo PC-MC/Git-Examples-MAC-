@@ -23,7 +23,6 @@ int Max(int[] array)
     for (int index = 0; index < array.Length; index++)
         if (array[index] > max)
             max = array[index];
-    Console.Write($"Максимальное число в представленном массиве: {max}");
     return max;
 }
 
@@ -34,7 +33,6 @@ int Min(int[] array)
     for (int index = 0; index < array.Length; index++)
         if (array[index] < min)
             min = array[index];
-    Console.Write($"Минимальное число в представленном массиве: {min}");
     return min;
 }
 
@@ -45,8 +43,13 @@ int Sum(int[] array)
     for (int index = 0; index < array.Length; index++)
         if (index < array.Length)
             sum = sum + array[index];
-    Console.WriteLine($"Сумма элементов в представленном массиве: {sum}");
     return sum;
+}
+
+// Поиск среднего арифметического
+int Average(int[] array)
+{
+    return Sum(array)/2;
 }
 
 // Поиск произведения элементов массива
@@ -56,73 +59,36 @@ int Mul(int[] array)
     for (int index = 0; index < array.Length; index++)
         if (index < array.Length)
             mul = mul * array[index];
-    Console.WriteLine($"Произведение элементов в представленном массиве: {mul}");
     return mul;
 }
 
 // Поиск индекса заданного элемента в массиве.
 // Если такого элемента в массиве нет то возвращать -1
-int SerchIndex(int[] array)
+int SerchIndex(int[] array, int find)
 {
-    Console.Write("Введите число чей индекс требуется найти: ");
-    int find = int.Parse(Console.ReadLine());
     int n = array.Length;
     int index = 0;
+    int fal = -1;
 
     while (index < n)
     {
 
         if (array[index] == find)
         {
-
-            Console.WriteLine($"Число найдено, его индекс: {index}");
-            break;
+            return index;
         }
         index++;
     }
 
-    if (index == n)
-    {
-        Console.WriteLine("Такого числа нет в массиве(-1)");
-    }
-
-    return index;
-}
-
-// Проверка наличия элемента в массиве. 
-int SerchNumber(int[] array)
-{
-    Console.Write("Введите число которое требуется найти: ");
-    int find = int.Parse(Console.ReadLine() ?? "0");
-    int n = array.Length;
-    int index = 0;
-
-    while (index < n)
-    {
-
-        if (array[index] == find)
-        {
-
-            Console.WriteLine($"Число найдено:{array[index]}");
-            break;
-        }
-        index++;
-    }
-
-    if (index == n)
-    {
-        Console.WriteLine("Такого числа нет в массиве");
-    }
-
-    return array[index];
+    if (index == n) return fal;
+    return fal;
 }
 
 // Проверка наличия элемента в массиве. 
 // Возвращает true, если элемент в массиве есть, false – нет.
-bool FindNum(int[] array)
+bool FindNum(int[] array, int num)
 {
-    Console.Write("Введите число которое требуется найти: ");
-    int num = int.Parse(Console.ReadLine() ?? "0");
+
     for (int index = 0; index < array.Length; index++)
     {
         if (array[index] == num)
@@ -131,18 +97,6 @@ bool FindNum(int[] array)
         }
     }
     return false;
-}
-
-// Поиск среднего арифметического
-double Average(int[] array)
-{
-    int sum = 0;
-    for (int index = 0; index < array.Length; index++)
-    {
-        sum = sum + array[index];
-    }
-    Console.WriteLine($"Среднее арифметическое равно: {sum / 2}");
-    return sum / 2;
 }
 
 // Подсчёт количества отрицательных элементов массива
@@ -159,10 +113,8 @@ int Count(int[] array)
 }
 
 // Подсчёт количества вхождений элемента в массив
-int CountIdentNumbers(int[] array)
+int CountIdentNumbers(int[] array, int findnumber)
 {
-    Console.Write("Ведите число которое будем считать: ");
-    int findnumber = int.Parse(Console.ReadLine() ?? "0");
     int count = 0;
     for (int index = 0; index < array.Length; index++)
 
@@ -217,12 +169,12 @@ int CountOddNum(int[] array)
 
 // Проверка является ли массив отсортированным по возрастанию. 
 // Если массив отсортирован, то возвращать true, иначе - false.
-bool SortingCheck(int[]array)
+bool SortingCheck(int[] array)
 {
-            for (int i = 0; i < array.Length-1; i++)
-                if (array[i] > array[i + 1])
-                    return false;
-            return true;
+    for (int i = 0; i < array.Length - 1; i++)
+        if (array[i] > array[i + 1])
+            return false;
+    return true;
 
 }
 
@@ -249,12 +201,14 @@ Console.WriteLine("");
 bool check = SortingCheck(array);
 Console.WriteLine($"Массив отсортирован по возрастанию: {check}");
 
-// Поиск максимальногочисла
+// Поиск максимального числа
 int max = Max(array);
+Console.Write($"Максимальное число в представленном массиве: {max}");
 Console.WriteLine("");
 
 // Поиск минимального числа
 int min = Min(array);
+Console.Write($"Минимальное число в представленном массиве: {min}");
 Console.WriteLine("");
 
 // Подсчёт количества чётных элементов в массив
@@ -275,28 +229,39 @@ Console.WriteLine($"Положительных чисел в массиве: {co
 
 // Нахождение суммы чисел
 int sum = Sum(array);
+Console.WriteLine($"Сумма элементов в представленном массиве: {sum}");
 
 // Нахождение среднего арифметического
-Console.WriteLine($"Среднее арифметическое равно: {sum / 2}");
+int x = Average(array);
+Console.WriteLine($"Среднее арифметическое равно: {x}");
 //Console.WriteLine("");
 //double average = Average(array);
 
 // Нахождение произведения чисел
 int multi = Mul(array);
+Console.WriteLine($"Произведение элементов в представленном массиве: {multi}");
 if (multi == 0)
 {
     Console.WriteLine("В массиве есть: 0, умножение на него дает результат: 0");
 }
 
 // Проверка на наличие числа в массиве
-bool serch = FindNum(array);
+Console.Write("Введите число которое требуется найти: ");
+int num = int.Parse(Console.ReadLine() ?? "0");
+bool serch = FindNum(array, num);
 Console.WriteLine($"Наличие числа в массиве: {serch}");
 
 // Поиск индекса числа
-int index = SerchIndex(array);
+Console.Write("Введите число чей индекс требуется найти: ");
+int find = int.Parse(Console.ReadLine() ?? "0");
+int index = SerchIndex(array, find);
+Console.WriteLine($"Число найдено, его индекс: {index}");
+
 
 // Подсчет вхождения числа в массив
-int count2 = CountIdentNumbers(array);
+Console.Write("Ведите число которое будем считать: ");
+int findnumber = int.Parse(Console.ReadLine() ?? "0");
+int count2 = CountIdentNumbers(array, findnumber);
 Console.WriteLine($"Искомых чисел в массиве: {count2}");
 
 
