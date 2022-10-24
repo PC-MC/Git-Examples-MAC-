@@ -49,7 +49,7 @@ int Sum(int[] array)
 // Поиск среднего арифметического
 int Average(int[] array)
 {
-    return Sum(array)/2;
+    return Sum(array)/array.Length;
 }
 
 // Поиск произведения элементов массива
