@@ -23,6 +23,7 @@ void PrintArray(int [,] mat)
     }
 }
 
+/*
 bool Findnumb (int [,] mat, int find)
 {
     for (int i = 0; i < mat.GetLength(0); i++)
@@ -37,6 +38,21 @@ bool Findnumb (int [,] mat, int find)
     }
 return false;
 }
+*/
+
+string Position(int[,] array, int num)
+{
+    string result = string.Empty;
+    for (int m = 0; m < array.GetLength(0); m++)
+    {
+        for (int n = 0; n < array.GetLength(1); n++)
+        {
+            if (num == array[m, n]) result += $"({m}, {n})";
+        }
+    }
+    if (result == string.Empty) result = "Такого элемента нет";
+    return result;
+}
 
 Console.WriteLine("Введите количество строк:" );
 int n = Convert.ToInt32(Console.ReadLine());
@@ -47,8 +63,12 @@ FillArray(matrix);
 PrintArray(matrix);
 Console.WriteLine("Введите число которое нужно найти:" );
 int x = Convert.ToInt32(Console.ReadLine());
+/*
 bool find = Findnumb(matrix, x);
 Console.WriteLine($"Наличие числа в массиве: {find}" );
+*/
+
+Console.WriteLine($"Число находится на позиции: {Position(matrix,x)}");
 
 
 
