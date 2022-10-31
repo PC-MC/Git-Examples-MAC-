@@ -26,12 +26,12 @@ void FillArray(int[,] matr)
 
 void Change(int[,] matr)
 {
-    int tmp = 0;
+    int change = 0;
     for (int j = 0; j < matr.GetLength(1); j++)
     {
-        tmp = matr[0, j];
+        change = matr[0, j];
         matr[0, j] = matr[matr.GetLength(0)-1, j];
-        matr[matr.GetLength(0)-1, j] = tmp;
+        matr[matr.GetLength(0)-1, j] = change;
     }
 }
 

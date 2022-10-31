@@ -19,15 +19,15 @@ void FillArray(double[,] matr)
     {
         for (int j = 0; j < matr.GetLength(1); j++)
         {
-            matr[i, j] = Convert.ToDouble(rand.Next(1, 10) / 10.0);;
+            matr[i, j] = Convert.ToDouble(rand.Next(1, 10) / 10.0);
         }
     }
 }
 Console.WriteLine("Введите размерность массива m*n");
 Console.Write("Введите m: ");
-int m  = int.Parse(Console.ReadLine());;
+int m  = int.Parse(Console.ReadLine());
 Console.Write("Введите n: ");
-int n  = int.Parse(Console.ReadLine());;
+int n  = int.Parse(Console.ReadLine());
 double[,] matrix = new double[m, n];
 FillArray(matrix);
 Console.WriteLine();

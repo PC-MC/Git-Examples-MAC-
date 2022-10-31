@@ -10,6 +10,7 @@ void FillArray(int[,] matr)
         }  
     }
 } 
+
 void PrintArray(int[,] matr)
 {
     for (int i =0; i < matr.GetLength(0); i++)
@@ -21,6 +22,7 @@ void PrintArray(int[,] matr)
     Console.WriteLine();    
     }
 } 
+
 int SumOfDiagonal(int[,] matr)
 {
     int sum = 0;
@@ -30,6 +32,7 @@ int SumOfDiagonal(int[,] matr)
     }
     return sum;
 }
+
 Console.Clear();
 Console.Write("Введите кол-во строк и столбцов квадтратной матрицы ");
 int k = int.Parse(Console.ReadLine() ?? "0");

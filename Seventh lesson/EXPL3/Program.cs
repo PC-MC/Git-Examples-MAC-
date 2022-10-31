@@ -30,13 +30,18 @@ void Change(double[,] matr)
     {
         for (int j = 0; j < matr.GetLength(1); j++)
         {
-            if (i==j)
+            if ((i % 2 == 0) && (j % 2 == 0))
             {
-            matr[i, j] = Math.Pow(matr[i, j], 2);
+                matr[i, j] = Math.Pow(matr[i, j], 2);
+            }
+            else
+            {
+                matr[i, j] = matr [i, j];
             }
         }
     }
 }
+
 
 Console.WriteLine("Введите размерность массива m*n");
 Console.Write("Введите m: ");

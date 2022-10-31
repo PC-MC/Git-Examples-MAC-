@@ -1,6 +1,6 @@
 ﻿// Дан целочисленный массив. Найти среднее арифметическое каждого из столбцов.
 
-void PrintArray(int[,] matr)
+void Printmatr(int[,] matr)
 {
     for (int i = 0; i < matr.GetLength(0); i++)
     {
@@ -10,6 +10,16 @@ void PrintArray(int[,] matr)
         }
         Console.WriteLine();
     }
+}
+void PrintArray(double[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        
+      Console.Write($"{array[i]} ");
+    }
+     Console.WriteLine();
+
 }
 
 void FillArray(int[,] matr)
@@ -24,26 +34,35 @@ void FillArray(int[,] matr)
     }
 }
 
-void AverageSum(int[,] matr)
+void AverageSum(int[,] matr, double []array)
 {
+    int index = 0;
     for (int i = 0; i < matr.GetLength(1); i++)
     {
+        
         int sum = 0;
-        for (int j = 0; j < matr.GetLength(0); j++)
+        for (int j = 0; j < matr.GetLength(0);j++)
         {
-            sum = sum + matr[j, i];
+            sum= sum + matr[j, i];
+           
         }
-        Console.WriteLine($"Среднее {i+1}-го столбца равно: {sum}");
+     array[index] = sum/matr.GetLength(1);
+     index++;
     }
 }
 
-Console.WriteLine("Введите размерность массива m*n");
-Console.Write("Введите m: ");
+Console.WriteLine("Введите размерность массива");
+Console.Write("Введите количестиво строк: ");
 int m  = int.Parse(Console.ReadLine());;
-Console.Write("Введите n: ");
+Console.Write("Введите количество столбцов: ");
 int n  = int.Parse(Console.ReadLine());;
 int[,] matrix = new int[m, n];
+double [] array = new double [m];
 FillArray(matrix);
 Console.WriteLine();
-PrintArray(matrix);
-AverageSum(matrix);
+Console.WriteLine("Матрица: ");
+Printmatr(matrix);
+AverageSum(matrix,array);
+Console.WriteLine();
+Console.WriteLine("Среднее арифметическое столбцов: ");
+PrintArray(array);
